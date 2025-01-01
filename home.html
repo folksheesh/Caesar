@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar Grocery Store</title>
+    <link rel="stylesheet" href="css/home.css" />
+    <!-- Box Icon -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("navbar.html");
+        });
+    </script>
+    <!-- The Modal -->
+    <div class="modal right fade" id="rightFullScreenModal" tabindex="-1" aria-labelledby="rightFullScreenModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title cart-title" id="rightFullScreenModalLabel">Your Cart <span
+                            class="total-cart">(8)</span></h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body empty-cart">
+                    <h1>Your bag is empty</h1>
+                    <h6>Let’s find something for you to enjoy!</h6>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer mb-3 center">
+                    <h6>Subtotal
+                        (before tax)
+                        <span class="display-price">
+                            $186.92</span>
+                    </h6>
+                    <button type="button" class="btn-check-out">Check out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+    <!--end of Navigation bar-->
+
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide containers">
+                <div class="home-text">
+                    <span>We are precious</span>
+                    <h1>
+                        Choose caesar <br />
+                        the best health <br />
+                        vegie, fruit and other
+                    </h1>
+                    <a href="#products" class="button">Check Now<i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+                <img src="img/home1.png" alt="" />
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide containers">
+                <div class="home-text">
+                    <span>We are precious</span>
+                    <h1>
+                        Choose caesar <br />
+                        the best health <br />
+                        vegie, fruit and other
+                    </h1>
+                    <a href="#products" class="button">Check Now<i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+                <img src="img/buah_buahan-removebg-preview (1).png" alt="" />
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide containers">
+                <div class="home-text">
+                    <span>We are precious</span>
+                    <h1>
+                        Choose caesar <br />
+                        the best health <br />
+                        vegie, fruit and other
+                    </h1>
+                    <a href="#products" class="button">Check Now<i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+                <img src="img/peanut.png" alt="" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <div class="heading">
+            <h1>Browse Our Hottest <br /><span> Categories</span></h1>
+            <a href="#categories" class="button">See All <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+        <div class="categories-container">
+            <!-- Box 1 -->
+            <div class="box box1" onclick="filterProducts('fruits')">
+                <img src="img/buah_buahan-removebg-preview (1).png" alt="" />
+                <h2>Fruits</h2>
+                <span>22 Items</span>
+                <i class="bx bx-right-arrow-alt"></i>
+            </div>
+            <!-- Box 2 -->
+            <div class="box box2" onclick="filterProducts('vegetables')">
+                <img src="img/pakcoy.png" alt="" />
+                <h2>Vegetables</h2>
+                <span>22 Items</span>
+                <i class="bx bx-right-arrow-alt"></i>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="box box2" onclick="filterProducts('nuts')">
+                <img src="img/peanut.png" alt="" />
+                <h2>Nuts</h2>
+                <span>22 Items</span>
+                <i class="bx bx-right-arrow-alt"></i>
+            </div>
+
+
+            <!-- Add more boxes for other categories -->
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="heading">
+            <h1>Our Popular <br /><span> Products</span></h1>
+            <a href="#products" class="button">Check Now <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+        <!-- product Content -->
+        <div class="product-container" id="product-container">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+        <img src="img/store.jpg" alt="" />
+        <div class="about-text">
+            <span>About us</span>
+            <p>Welcome to Caesar Web Supermarket, your premier online destination for healthy foods, drinks,
+                and fresh
+                vegetables. Our mission is to make healthy living accessible and convenient for everyone by
+                offering a
+                diverse range of high-quality, nutritious products. From organic produce and gluten-free
+                snacks to
+                refreshing herbal teas and freshly squeezed juices, we have everything you need to nourish
+                your body and
+                mind. We are committed to quality assurance, sustainability, and exceptional customer
+                service, ensuring
+                that you receive only the best products while supporting a healthier lifestyle. Shop with us
+                and embrace
+                wellness, one nutritious choice at a time!
+            </p>
+            <a href="#about" class="button">Learn More<i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+    </section>
+    <!-- Costumers -->
+    <div class="customers" id="customers">
+        <h2>Why customers love us?</h2>
+        <!-- Costumer Content -->
+        <div class="customers-container">
+            <!-- Review 1 -->
+            <div class="box">
+                <i class='bx bxs-quote-alt-left' undefined></i>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <p>
+                    I recently visited Caesar Grocery Store and was blown away by the quality of their
+                    vegetables. The
+                    carrots were crisp and sweet, the tomatoes were juicy and flavorful, and the leafy
+                    greens were fresh
+                    and vibrant. I appreciated the variety of organic options available, and everything
+                    seemed to be
+                    sourced from local farms. The staff was knowledgeable and helpful, making the shopping
+                    experience
+                    pleasant and efficient. I will definitely be coming back for all my vegetable needs!
+                </p>
+                <div class="review-profile">
+                    <img src="img/peps3.jpeg" alt="" />
+                    <h3>Michele Smith</h3>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="box">
+                <i class='bx bxs-quote-alt-left' undefined></i>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>
+                    Caesar Grocery Store has an impressive selection of fruits! I found everything I needed,
+                    from
+                    perfectly ripe bananas to exotic fruits like dragon fruit and passion fruit. The berries
+                    were
+                    especially delightful, bursting with flavor. The only downside was that the prices were
+                    a bit higher
+                    than I expected, but the quality made it worth it. The store was clean and
+                    well-organized, and the
+                    staff was friendly. Overall, a great place to buy fresh, high-quality fruits. The staff
+                    was also
+                    polite and im in love with one of them.
+                </p>
+                <div class="review-profile">
+                    <img src="img/peps2.jpeg" alt="" />
+                    <h3>Sarah Joe</h3>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="box">
+                <i class='bx bxs-quote-alt-left' undefined></i>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>
+                    I love shopping at Caesar Grocery Store for their wide variety of nuts and peppers. They
+                    have
+                    everything from almonds and cashews to pecans and walnuts, all of which are incredibly
+                    fresh and
+                    reasonably priced. The selection of peppers is fantastic too, with options ranging from
+                    mild bell
+                    peppers to spicy habaneros. The store has a great layout, making it easy to find what
+                    you need, and
+                    the staff is always ready to assist. I highly recommend this store with fresh and
+                    diverse nut and
+                    pepper options!
+                </p>
+                <div class="review-profile">
+                    <img src="img/peps1.jpeg" alt="" />
+                    <h3>Emily Rowe</h3>
+                </div>
+            </div>
+            </section>
+
+            <!-- footer -->
+            <section class="footer" id="footer">
+                <div class="footer-box">
+                    <a href="#" class="logo"><i class="bx bxs-basket"></i>Caesar</a>
+                    <p> Gymsat. 50th Street,4th <br> Kemang, Jakarta 10022 </p>
+                    <div class="social">
+                        <a href="#"><box-icon name="facebook-circle" type="logo"></box-icon></a>
+                        <a href="#"><box-icon name="twitter-circle" type="logo"></box-icon></a>
+                        <a href="#"><box-icon name="instagram-circle" type="logo"></box-icon></a>
+                        <a href="#"><box-icon name="youtube-circle" type="logo"></box-icon></a>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h2>Categories</h2>
+                    <a href="#">Fruits & Vegetable</a>
+                    <a href="#">Dairy Products</a>
+                    <a href="#">Package Food</a>
+                    <a href="#">Bevarage</a>
+                </div>
+                <div class="footer-box">
+                    <h2>Useful Links</h2>
+                    <a href="#">Payment & Tax</a>
+                    <a href="#">Terms Of Use</a>
+                    <a href="#">My Blog</a>
+                    <a href="#">Return Policy</a>
+                </div>
+                <div class="footer-box">
+                    <h2>Newsletter</h2>
+                    <p>Get 10% Discount with <br />Email Newsletter</p>
+                    <form action="">
+                        <box-icon name="envelope" type="solid"></box-icon>
+                        <input type="Email" name="" id="" placeholder="Enter Your Email" />
+                        <box-icon name="arrow-back"></box-icon>
+                    </form>
+                </div>
+            </section>
+
+
+            <!-- copyright -->
+            <!-- <div class="copyright">
+                <p>&#169; Caesar888 All Right Reserved</p>
+            </div> -->
+
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <!-- Main JS -->
+            <script src="js/main.js"></script>
+            <script src="js/login.js"></script>
+            <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<body>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <header>
+        <a href="#" class="logo"><i class="bx bxs-basket"></i>Caesar</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="nav">
+            <li><a href="home.html" class="">Home</a></li>
+            <li><a href="#categories" class="">Categories</a></li>
+            <li><a href="product.html" class="">Products</a></li>
+            <li><a href="#about" class="">About</a></li>
+            <li><a href="#customers" class="">Customers</a></li>
+        </ul>
+        <div class="right">
+            <label class="cart-count">8</label>
+            <div class="cart">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#rightFullScreenModal"><i
+                        class='bx bx-shopping-bag'></i></button>
+            </div>
+            <div class="profile" onclick="toggleMenu()">
+                <img src="img/profile.jpeg" alt="" />
+                <span class="display-username"></span>
+                <i class="bx bx-caret-down"></i>
+            </div>
+        </div>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="img/profile.jpeg" alt="" />
+                    <h3 class="display-username"></h3>
+                </div>
+                <hr />
+
+                <a href="#" class="sub-menu-link">
+                    <img src="img/user.png" alt="" />
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="login.html" class="sub-menu-link">
+                    <img src="img/logout.png" alt="" />
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> -->
+
+</body>
+
+<script>
+    // Ensure backdrop is properly managed
+    var rightFullScreenModal = document.getElementById('rightFullScreenModal');
+    rightFullScreenModal.addEventListener('show.bs.modal', function () {
+        var modalBackdrop = document.createElement('div');
+        modalBackdrop.className = 'modal-backdrop fade show';
+        document.body.appendChild(modalBackdrop);
+    });
+    rightFullScreenModal.addEventListener('hidden.bs.modal', function () {
+        var backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.remove();
+        }
+    });
+
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu() {
+        let subMenu = document.getElementById("subMenu");
+        subMenu.classList.toggle("open-menu")
+        console.log("klik");
+    }
+</script>

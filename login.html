@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="login-card">
+        <div class="column">
+            <h1>Login</h1>
+            <p>After Logining in, you can enjoy the shooping</p>
+            <form id="form">
+                <div class="form-item">
+                    <input type="text" id="username" class="form-element" placeholder="Username or Email" required />
+                </div>
+                <div class="form-item">
+                    <input type="password" id="password" class="form-element" placeholder="Password" required />
+                    <i class="toggle-password bx bx-show" id="togglePassword"></i>
+                </div>
+                <p id="error-message"></p>
+                <div class="flex">
+                    <button type="submit">Sign In</button>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="column">
+            <h2>Welcome to Caesar</h2>
+            <p>If you don't have an account, would you like to register right now?</p>
+            <a href="#">Sign Up</a>
+        </div>
+
+    </div>
+    <script src="js/login.js"></script>
+    <script src="js/show.js"></script>
+</body>
+
+</html>
