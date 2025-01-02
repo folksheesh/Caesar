@@ -8,3 +8,6 @@ EXPOSE 80
 
 # Ensure that nginx runs correctly
 CMD ["nginx", "-g", "daemon off;"]
+
+# Ensure that nginx runs correctly
+CMD ["nginx", "-g", "daemon off;"]
