@@ -1,8 +1,10 @@
-# Menggunakan base image Nginx
-FROM nginx:latest
+FROM nginx:alpine
 
-# Menyalin file statis ke dalam direktori default Nginx
-COPY ./html /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
 
-# Expose port (opsional)
+COPY . .
+
 EXPOSE 80
+
+# Ensure that nginx runs correctly
+CMD ["nginx", "-g", "daemon off;"]
