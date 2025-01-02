@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('Linting') {
+            steps {
+                // Gunakan 'bat' untuk Windows
+                bat 'echo Running Linting on Windows'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t my-image .'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'echo Running Tests'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                bat 'echo Deploying Application'
+            }
+        }
+    }
+}
