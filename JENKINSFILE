@@ -2,10 +2,31 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Linting') {
             steps {
-                // Print the username of the executing environment
-                bat 'whoami'
+                // Lakukan linting pada file JavaScript
+                sh 'npx eslint .'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                // Bangun Docker image
+                sh 'docker build -t my-html-app .'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Jalankan pengujian
+                sh 'npm test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Jalankan container di server produksi
+                sh 'docker run -d -p 8080:80 my-html-app'
             }
         }
     }
