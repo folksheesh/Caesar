@@ -43,11 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         displayUsernameElements.forEach(function (element) {
             element.innerText = username;
         });
-
-        if (!username) {
-            // Jika tidak ada username, arahkan kembali ke halaman login
-            window.location.href = 'login.html';
-        }
     }
 
     // Panggil fungsi berdasarkan halaman yang diakses
