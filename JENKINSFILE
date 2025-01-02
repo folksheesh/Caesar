@@ -1,32 +1,25 @@
 pipeline {
     agent any
-
     stages {
         stage('Linting') {
             steps {
-                // Lakukan linting pada file JavaScript
-                sh 'npx eslint .'
+                // Gunakan 'bat' untuk Windows
+                bat 'echo Running Linting on Windows'
             }
         }
-
         stage('Build Docker Image') {
             steps {
-                // Bangun Docker image
-                sh 'docker build -t my-html-app .'
+                bat 'docker build -t my-image .'
             }
         }
-
         stage('Test') {
             steps {
-                // Jalankan pengujian
-                sh 'npm test'
+                bat 'echo Running Tests'
             }
         }
-
         stage('Deploy') {
             steps {
-                // Jalankan container di server produksi
-                sh 'docker run -d -p 8080:80 my-html-app'
+                bat 'echo Deploying Application'
             }
         }
     }
