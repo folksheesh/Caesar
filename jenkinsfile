@@ -1,11 +1,19 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                // Print the username of the executing environment
-                bat 'whoami'
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
             }
         }
     }
